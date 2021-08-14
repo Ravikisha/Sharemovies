@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FileShare</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+    <style>
+      body {
+        background-image: linear-gradient(180deg, #61E2FE, #293FFF);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+      }
+        #card{
+            border: 5px solid white;
+            background-color: white;
+            border-radius: 20px;
+            padding: 5%;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+           text-align: center;
+           margin: 13px 55px 27px 19px;
+            
+        }
+        #btn{
+            border: 15px solid lightgreen;
+            background-color: lightgreen;
+            border-radius: 10px;
+            text-decoration: none;
+            width: 200px;
+            height: 50px;
+            font-size: medium;
+            font-family: 'Comfortaa', cursive;
+        }
+        #heading{
+            border: 5px solid white;
+            background-color: white;
+            border-radius: 10%;
+            font-size: xx-large;
+            padding: 5%;
+            box-sizing: border-box;
+            font-family: 'Comfortaa', cursive;
+        }
+        #cont{
+            border: 5px solid whitesmoke;
+            box-sizing: border-box;
+            border-radius: 5px;
+            background-color: white;
+        }
+        #admin{
+            border: 20px solid whitesmoke(185, 184, 184);
+            box-sizing: border-box;
+            border-radius: 5px;
+            background-color:coral;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 15px 15px;
+            text-decoration: none;
+            display: inline-block;
+            padding: 20px;
+            font-family: 'Comfortaa', cursive;
+        }
+        
+      
+        
+        
+    </style>
+  </head>
+
+  <body>
+    
+  <br /><br /><br>
+      <center>
+          <h1 style="font-family: 'Comfortaa', cursive;">SHAREMOVIES</h1>
+          <div id="container">
+          <a style="color: white;" href="/admin" id="admin">Admin</a>
+          <a style="color: white;" href="/upload" id="admin">Upload</a>
+        </div>
+      </center>
+      <center>
+    <ul>
+       
+        {% for post in file %}
+        <div id= "card">
+            <div id="cont">
+        <div id= heading>{{post.title}}</div>
+        <button id="btn">
+          <a  style="color: #000" href="{{post.adminupload.url}}" download="{{post.adminupload.url}}"
+            >Download</a>
+        </button></div>
+        </div>
+      </br>
+        {% endfor %}
+    </center>
+      
+    </ul>
+  </body>
+</html>
